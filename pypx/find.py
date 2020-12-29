@@ -452,6 +452,7 @@ class Find(Base):
                         self.query(opt),
                         self.commandSuffix()
         )
+        print("findscu_command {}".format(str_cmd))
         return str_cmd
 
     def run(self, opt={}):
@@ -470,6 +471,7 @@ class Find(Base):
         """
         # pudb.set_trace()
 
+        # not checking the output of the run
         formattedStudiesResponse    = \
             self.systemlevel_run(opt,
                     {
@@ -484,6 +486,7 @@ class Find(Base):
         filteredStudiesResponse['data']     = []
         studyIndex                          = 0
         for study in formattedStudiesResponse['data']:
+            print("study {}".format(study))
             l_seriesResults = []
             formattedSeriesResponse     = \
                 self.systemlevel_run(opt,
