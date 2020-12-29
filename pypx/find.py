@@ -479,6 +479,9 @@ class Find(Base):
                         'QueryRetrieveLevel':   'STUDY'
                     }
             )
+        print("formattedStudiesResponse {}".format(formattedStudiesResponse))
+        if formattedStudiesResponse['status'] == 'error':
+            return formattedStudiesResponse
 
         filteredStudiesResponse             = {}
         filteredStudiesResponse['status']   = formattedStudiesResponse['status']
